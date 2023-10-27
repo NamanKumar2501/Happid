@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
         binding.ivBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
+
         binding.llOtpButton.setOnClickListener {
             val countryCode: String = binding.countryCode.selectedCountryCode
             val phoneNo = binding.etPhoneNumber.text.toString()
@@ -39,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun otp(a: String, endTwoDigits: String, phoneNo: String, countryCode: String) {
+    private fun otp(startTwoDigits: String, endTwoDigits: String, phoneNo: String, countryCode: String) {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
@@ -47,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         dialog.setCancelable(true)
 
         val otpText = dialog.findViewById<TextView>(R.id.txOTP)
-        val otp = a + endTwoDigits
+        val otp = startTwoDigits + endTwoDigits
         otpText.text = otp
 
         dialog.show()

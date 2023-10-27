@@ -37,9 +37,9 @@ class OTPActivity : AppCompatActivity() {
                 val intent = Intent(this, CreateProfileActivity::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "In-Correct OTP!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "InCorrect OTP!", Toast.LENGTH_SHORT).show()
             }
         }
-
+ 
     }
 }
